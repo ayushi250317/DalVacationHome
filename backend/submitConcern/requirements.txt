@@ -1,0 +1,4 @@
+google-cloud-pubsub
+requests
+boto3
+google-cloud-firestore

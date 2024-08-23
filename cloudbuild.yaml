@@ -1,0 +1,24 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  script: |
+    docker build -t us-east4-docker.pkg.dev/csci-5410-serverless-428017/csci5410-project-react/csci5410-project-react:latest ./frontend
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', us-east4-docker.pkg.dev/csci-5410-serverless-428017/csci5410-project-react/csci5410-project-react:latest]
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'csci5410-project-frontend'
+  - '--image'
+  - 'us-east4-docker.pkg.dev/csci-5410-serverless-428017/csci5410-project-react/csci5410-project-react:latest'
+  - '--region'
+  - 'us-east4'
+  - '--platform=managed'
+  - '--min-instances=1'
+  - '--allow-unauthenticated'
+  - '--port=3000'
+images:
+- 'us-east4-docker.pkg.dev/csci-5410-serverless-428017/csci5410-project-react/csci5410-project-react:latest'
+options:
+  logging: CLOUD_LOGGING_ONLY
