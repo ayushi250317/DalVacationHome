@@ -22,15 +22,3 @@
 
 - Set up the initial project structure and working on the basic setup logic for room management functionality.
 
-### June 2, 2024 to June 9, 2024
-
-#### Prithvi Manoj Krishna
-
-- Worked on researching and understanding Amazon Cognito.
-- Experimented and tried our Amazon Cognito.
-
-### June 10, 2024 to June 16, 2024
-
-#### Prithvi Manoj Krishna
-
-- Working on a simple sign up and login React app connected to Amazon Cognito.
